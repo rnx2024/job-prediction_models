@@ -8,7 +8,7 @@ The RF model showed an <b>MSE of 0.03036734417344173</b> compared to the LR mode
 
 <b>Note:</b> The RF and LR models were first trained with raw position including categorical variables such as company name, location, language, job description of about 25K but it struggled with extracting meaningful evaluations and had around MSE of 2700+ (RF) and 3700+ (LR). Lgmboost were further used to fine-tune the models but the same MSE figured. Hence, the creation of this repository.
 
-## First Top 20 Positions in the Dataset
+## Actual First Top 20 Positions in the Dataset
 
 | Position                      |
 |-------------------------------|
