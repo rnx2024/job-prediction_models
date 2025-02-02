@@ -8,7 +8,7 @@ The RF model showed an <b>MSE of 0.03036734417344173</b> compared to the LR mode
 
 <b>Note:</b> The RF and LR models were first trained with raw position including categorical variables such as company name, location, language, job description of about 25K but it struggled with extracting meaningful evaluations and had around MSE of 2700+ (RF) and 3700+ (LR). Lgmboost were further used to fine-tune the models but the same MSE figured. Hence, the creation of this repository.
 
-
+<table>
 Total rows in the dataset: 9838
 First top 20 positions in the dataset:
        fullstack Developer
@@ -30,9 +30,9 @@ senior fullstack Developer
   senior backend Developer
   senior frontend Engineer
           backend Engineer
-             web Developer
-
-## RF Model Prediction: 
+             web Developer 
+</table>
+## RF Model Prediction:
 Random Forest Mean Squared Error: 0.03036734417344173
                                       position  predicted
 740                         software Developer     285.72
@@ -58,6 +58,8 @@ Random Forest Mean Squared Error: 0.03036734417344173
 
 ## LR Model Prediction:
 Linear Regression Mean Squared Error: 5.4643048068967646e-30
+
+<table>
                           position  predicted
 481            fullstack Developer      581.0
 341             software Developer      286.0
@@ -79,5 +81,6 @@ Linear Regression Mean Squared Error: 5.4643048068967646e-30
 2113        frontend web Developer       44.0
 1895                cloud Engineer       43.0
 608            mechanical Engineer       42.0
+</table>
 
 These train and test datasets were first used for the Linear Regression Model via R Programming. \n <https://github.com/rnx2024/Linear-Regression-Model-Training-with-R> The Random Forest Model in R Programming has categorical limits of only 53 so that it wasn't feasible to do this with R. 
