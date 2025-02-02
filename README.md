@@ -89,5 +89,13 @@ Linear Regression Mean Squared Error: 5.4643048068967646e-30
 | Cloud Engineer                          | 43.0      |
 | Mechanical Engineer                     | 42.0      |
 
+## Summary:
+<b>Common Positions:</b> Both models successfully identified key positions that are in high demand, demonstrating their relevance.
+
+<b>Ranking Differences:</b> The ranking differences highlight the importance of understanding the specific strengths and limitations of each model.
+
+<b>Prediction Counts:</b> The variation in predicted counts suggests that while both models are useful, they may interpret the data differently.
+
+Overall, both models provide valuable insights into job position demands. The differences in their predictions can offer a more comprehensive understanding when combined, helping to identify key positions and their relative importance in the job market.
 
 These train and test datasets were first used for the Linear Regression Model via R Programming. \n <https://github.com/rnx2024/Linear-Regression-Model-Training-with-R> The Random Forest Model in R Programming has categorical limits of only 53 so that it wasn't feasible to do this with R. 
