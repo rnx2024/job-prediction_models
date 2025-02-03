@@ -1,6 +1,6 @@
 # job-prediction_models
 
-These job prediction models - Random Forest and Linear Regression - were trained on more than 9838 unique jobs extracted from 25K job positions from January to December 2024
+These job prediction models - Random Forest and Linear Regression - were trained on 9838 unique jobs extracted from 25K job positions from January to December 2024
 
 For easier handling, the dataset used was stored in a dataframe "original_positions" before target encoding and was mapped back into the "positions" after target encoding. 
 
