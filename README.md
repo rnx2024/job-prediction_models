@@ -98,4 +98,8 @@ Linear Regression Mean Squared Error: 5.4643048068967646e-30
 
 Overall, both models provide valuable insights into job position demands. The differences in their predictions can offer a more comprehensive understanding when combined, helping to identify key positions and their relative importance in the job market.
 
-These train and test datasets were first used for the Linear Regression Model via R Programming. \n <https://github.com/rnx2024/Linear-Regression-Model-Training-with-R> The Random Forest Model in R Programming has categorical limits of only 53 so that it wasn't feasible to do this with R. 
+These train and test datasets were first used for the Linear Regression Model via R Programming. 
+
+[![Button2](https://img.shields.io/badge/Click%20Me-Button2-green)](https://github.com/rnx2024/Linear-Regression-Model-Training-with-R)
+
+The Random Forest Model in R Programming has categorical limits of only 53 so that it wasn't feasible to do this with R. 
