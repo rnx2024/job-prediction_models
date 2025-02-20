@@ -1,4 +1,4 @@
-# job-prediction_models
+# Job Prediction Models
 
 These job prediction models - Random Forest and Linear Regression - were trained on 9838 unique jobs extracted from 25K job positions from January to December 2024
 
