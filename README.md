@@ -100,6 +100,6 @@ Overall, both models provide valuable insights into job position demands. The di
 
 These train and test datasets were first used for the Linear Regression Model via R Programming. 
 
-[![Button2](https://img.shields.io/badge/Click%20Me-Linear-Regression-Model-green)](https://github.com/rnx2024/Linear-Regression-Model-Training-with-R)
+[![Button2](https://img.shields.io/badge/Click%20Me-LinearRegressionModel-green)](https://github.com/rnx2024/Linear-Regression-Model-Training-with-R)
 
 The Random Forest Model in R Programming has categorical limits of only 53 so that it wasn't feasible to do this with R. 
