@@ -20,9 +20,8 @@ This table highlights the predicted top jobs for 2025 based on machine learning 
 
 The model's evaluation metrics:
 
-MSE: 1.420303488899371
-MAE: 0.046526468271640996
----
+**MSE:** 1.420303488899371
+**MAE:** 0.046526468271640996
 
 ### Overview
 
