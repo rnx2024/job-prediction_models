@@ -1,12 +1,14 @@
 import pandas as pd
 import numpy as np
 import logging
+import matplotlib.pyplot as plt
+import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_squared_error, mean_absolute_error
 from category_encoders import TargetEncoder
 
-# Set up logging format
+# Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def load_dataset(file_path):
@@ -88,23 +90,6 @@ def train_random_forest(X_train, y_train, **kwargs):
         logging.error(f"Error in training Random Forest model: {e}.")
         raise
 
-def evaluate_model(rf_model, X_test, y_test):
-    """
-    Evaluate the trained Random Forest model.
-    """
-    try:
-        # Make predictions
-        predictions = rf_model.predict(X_test)
-
-        # Compute Mean Squared Error (MSE)
-        mse = mean_squared_error(y_test, predictions)
-        logging.info(f"Mean Squared Error (MSE): {mse}")
-
-        return predictions
-    except Exception as e:
-        logging.error(f"Error in evaluating the model: {e}.")
-        raise
-
 def get_top_jobs(test_data, predictions, top_n=10):
     """
     Identify the top jobs based on predicted counts.
@@ -121,6 +106,20 @@ def get_top_jobs(test_data, predictions, top_n=10):
         logging.error(f"Error in identifying top jobs: {e}.")
         raise
 
+# Evaluate the model
+def evaluate_model(rf_model, X_test, y_test):
+    # Make predictions
+    predictions = rf_model.predict(X_test)
+
+    # Mean Squared Error (MSE)
+    mse = mean_squared_error(y_test, predictions)
+    print(f"Mean Squared Error (MSE): {mse}")
+
+    # Mean Absolute Error (MAE)
+    mae = mean_absolute_error(y_test, predictions)
+    print(f"Mean Absolute Error (MAE): {mae}")
+
+    return predictions
 
 def main():
     """
@@ -128,19 +127,16 @@ def main():
     """
     try:
         # Load dataset
-        file_path = 'cleaned_data.csv'  # Update this path as needed
+        file_path = 'cleaned_data.csv'  
         data = load_dataset(file_path)
 
         # Define categorical columns and target column
-        categorical_columns = ['company_name', 'position', 'location', 'contract_type', 'language', 'job_description']
+        categorical_columns = ['company_name', 'position', 'location', 'contract_type', 'language', 'job_description',
+                                'mode_of_application', 'job_location', 'job_delisted']
         target_column = 'count'
 
         # Preprocess data
         encoded_data = preprocess_data(data, categorical_columns, target_column)
-
-        # Verify the 'count' column
-        if target_column not in encoded_data.columns:
-            raise KeyError(f"'{target_column}' column is still missing after preprocessing!")
 
         # Split data into training and testing sets
         X_train, X_test, y_train, y_test = split_data(encoded_data, target_column)
@@ -152,7 +148,6 @@ def main():
                                        min_samples_split=5,
                                        min_samples_leaf=2,
                                        max_features='sqrt')
-
         # Evaluate the model
         predictions = evaluate_model(rf_model, X_test, y_test)
 
